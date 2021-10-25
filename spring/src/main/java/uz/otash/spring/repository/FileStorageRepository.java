@@ -12,5 +12,5 @@ public interface FileStorageRepository extends JpaRepository<FileStorage, Long> 
 
     FileStorage findByHashId(String hashId);
 
-    List<FileStorage> findByFilesStorageStatus(FileStorageStatus status);
+    List<FileStorage> findAllByFileStorageStatus(FileStorageStatus fileStorageStatus);
 }

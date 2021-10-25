@@ -82,7 +82,7 @@ public class FileStorageService {
 
     @Scheduled(cron = "0 0 0 * * *")
     public void deleteAllDraft() {
-        List<FileStorage> fileStorageList = fileStorageRepository.findByFilesStorageStatus(FileStorageStatus.DRAFT);
+        List<FileStorage> fileStorageList = fileStorageRepository.findAllByFileStorageStatus(FileStorageStatus.DRAFT);
 //        for(FileStorage fileStorage: fileStorageList){
 //            delete(fileStorage.getHashId());
 //        }
