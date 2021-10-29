@@ -3,9 +3,11 @@ package uz.otash.spring.web.rest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import uz.otash.spring.domain.Employee;
+import uz.otash.spring.security.SecurityUtils;
 import uz.otash.spring.service.EmployeeService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -37,6 +39,7 @@ public class EmployeeResource {
 
     @GetMapping("/employees/{name}")
     public ResponseEntity getAll(@PathVariable String name){
+        Optional<String> optional = SecurityUtils.getCurrentUserName();
         List<Employee> employeeList = employeeService.findByNameQuaryNative(name);
         return ResponseEntity.ok(employeeList);
     }

@@ -6,7 +6,7 @@ import uz.otash.spring.domain.User;
 import uz.otash.spring.repository.UserRepository;
 
 @Service
-public class UserService {
+public class UserService  {
     private final UserRepository userRepository;
 
     private final PasswordEncoder passwordEncoder;
