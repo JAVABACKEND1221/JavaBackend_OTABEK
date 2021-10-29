@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "User_Otash")
+@Table(name = "Users_Table")
 public class User implements Serializable {
 
     @Id
@@ -33,9 +33,9 @@ public class User implements Serializable {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "user_role",
-            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "role_name", referencedColumnName = "name")}
+            name = "users_role",
+            joinColumns = {@JoinColumn(name = "users_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "roles_name", referencedColumnName = "name")}
     )
     private Set<Role> roles = new HashSet<>();
 
